@@ -10,7 +10,7 @@ struct Index {
   @State activeFilter: string = 'none';
 
   async aboutToAppear() {
-    const imagefile = await getContext().resourceManager.getRawFd('cat.jpg');
+    const imagefile = await this.getUIContext()?.getHostContext()?.resourceManager.getRawFd('cat.jpg');
     const imageSource: image.ImageSource = image.createImageSource(imagefile);
     let decodingOptions: image.DecodingOptions = {
       desiredPixelFormat: image.PixelMapFormat.RGBA_8888,
@@ -28,36 +28,36 @@ struct Index {
   }
 
   build() {
-    Column({space: 8}) {
-      Row({space: 4}) {
+    Column({ space: 8 }) {
+      Row({ space: 4 }) {
         ForEach(Object.keys(colorEffects).slice(0, 3), (item: string) => {
-            Button(item.toUpperCase())
-              .height(24)
-              .backgroundColor(this.activeFilter === item ? '#007AFF' : '#f0f0f0')
-              .fontColor(this.activeFilter === item ? '#ffffff' : '#333')
-              .fontSize(9)
-              .fontWeight(FontWeight.Bold)
-              .borderRadius(6)
-              .padding(4)
-              .width(56)
-              .onClick(() => this.applyFilter(item))
+          Button(item.toUpperCase())
+            .height(24)
+            .backgroundColor(this.activeFilter === item ? '#007AFF' : '#f0f0f0')
+            .fontColor(this.activeFilter === item ? '#ffffff' : '#333')
+            .fontSize(9)
+            .fontWeight(FontWeight.Bold)
+            .borderRadius(6)
+            .padding(4)
+            .width(56)
+            .onClick(() => this.applyFilter(item))
         })
       }
 
       Image(this.pixelMap).width(176).height(80).borderRadius(8)
 
-      Row({space: 4}) {
+      Row({ space: 4 }) {
         ForEach(Object.keys(colorEffects).slice(3), (item: string) => {
-            Button(item.toUpperCase())
-              .height(24)
-              .backgroundColor(this.activeFilter === item ? '#007AFF' : '#f0f0f0')
-              .fontColor(this.activeFilter === item ? '#ffffff' : '#333')
-              .fontSize(9)
-              .fontWeight(FontWeight.Bold)
-              .borderRadius(6)
-              .padding(4)
-              .width(56)
-              .onClick(() => this.applyFilter(item))
+          Button(item.toUpperCase())
+            .height(24)
+            .backgroundColor(this.activeFilter === item ? '#007AFF' : '#f0f0f0')
+            .fontColor(this.activeFilter === item ? '#ffffff' : '#333')
+            .fontSize(9)
+            .fontWeight(FontWeight.Bold)
+            .borderRadius(6)
+            .padding(4)
+            .width(56)
+            .onClick(() => this.applyFilter(item))
         })
       }
     }
