@@ -13,7 +13,7 @@ struct Index {
     const imagefile = await this.getUIContext()?.getHostContext()?.resourceManager.getRawFd('cat.jpg');
     const imageSource: image.ImageSource = image.createImageSource(imagefile);
     let decodingOptions: image.DecodingOptions = {
-      desiredPixelFormat: image.PixelMapFormat.RGBA_8888,
+      desiredPixelFormat: image.PixelMapFormat.RGBA_8888
     };
 
     this.pixelMap = await imageSource.createPixelMap(decodingOptions);
@@ -41,7 +41,7 @@ struct Index {
             .padding(4)
             .width(56)
             .onClick(() => this.applyFilter(item))
-        })
+        }, (item: string, index: number) => item)
       }
 
       Image(this.pixelMap).width(176).height(80).borderRadius(8)
@@ -58,7 +58,7 @@ struct Index {
             .padding(4)
             .width(56)
             .onClick(() => this.applyFilter(item))
-        })
+        }, (item: string, index: number) => item)
       }
     }
     .align(Alignment.Center)

@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.hmosdemos.image_effect",
+    "bundleName": "com.hmosdemos.wearable.how_to_use_image_effect",
     "vendor": "hmosdemos",
     "versionCode": 1000000,
     "versionName": "1.0.0",

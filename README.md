@@ -35,7 +35,7 @@ entry/src/main/ets/
 │       EntryAbility.ets
 ├───entrybackupability
 │       EntryBackupAbility.ets
-├───lib   
+├───lib
 │   ├───ColorFilters.ets
 ├───pages
 │       Index.ets
