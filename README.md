@@ -2,7 +2,7 @@
 
 # How to use Image Effects
 
-ImageEffect is designed for HarmonyOS Next wearable devices, allowing users to quickly apply creative image effects to
+ImageEffect is designed for HarmonyOS wearable devices, allowing users to quickly apply creative image effects to
 photos. The app provides a simple interface to experiment with popular image filters such as sepia, grayscale, and other
 color adjustments.
 
